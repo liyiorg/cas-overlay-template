@@ -7,7 +7,7 @@
     <artifactId>cas-overlay</artifactId>
     <packaging>war</packaging>
     <version>1.0</version>
-
+    
     <build>
         <plugins>
             <plugin>
@@ -26,7 +26,7 @@
                             <groupId>org.jasig.cas</groupId>
                             <artifactId>cas-server-webapp</artifactId>
                             <excludes>
-                                <exclude>WEB-INF/cas.properties</exclude>
+                                <!-- <exclude>WEB-INF/cas.properties</exclude> -->
                                 <exclude>WEB-INF/classes/log4j2.xml</exclude>
                             </excludes>
                         </overlay>
@@ -76,9 +76,26 @@
             <type>war</type>
             <scope>runtime</scope>
         </dependency>
+        <dependency>
+		    <groupId>org.jasig.cas</groupId>
+		    <artifactId>cas-server-support-jdbc</artifactId>
+		    <version>${cas.version}</version>
+		</dependency>
+		<dependency>
+		    <groupId>c3p0</groupId>
+		    <artifactId>c3p0</artifactId>
+		    <version>0.9.1.2</version>
+		</dependency>
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>5.1.45</version>
+			<scope>runtime</scope>
+		</dependency>
     </dependencies>
 
     <properties>
+        <!-- <cas.version>4.1.10</cas.version> -->
         <cas.version>4.1.10</cas.version>
         <maven-jetty-plugin.version>9.3.6.v20151106</maven-jetty-plugin.version>
         <maven.compiler.source>1.7</maven.compiler.source>

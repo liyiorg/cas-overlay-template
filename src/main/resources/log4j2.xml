@@ -47,10 +47,15 @@
         </RollingFile>
     </Appenders>
     <Loggers>
+        <Logger name="org.jasig.services.persondir" level="debug">
+        	<AppenderRef ref="console"/>
+            <AppenderRef ref="file"/>
+        </Logger>
         <Logger name="org.jasig" level="debug" additivity="false">
             <AppenderRef ref="console"/>
             <AppenderRef ref="file"/>
         </Logger>
+        <Logger name="org.springframework.jdbc" level="debug"/>
         <Logger name="org.springframework" level="warn" />
         <Logger name="org.springframework.webflow" level="warn" />
         <Logger name="org.springframework.web" level="warn" />
@@ -66,6 +71,7 @@
         <Logger name="org.jasig.inspektr.audit.support.Slf4jLoggingAuditTrailManager" level="info">
             <AppenderRef ref="file"/>
         </Logger>
+        <Logger name="com.aobei" level="debug" />
         <Root level="debug">
             <AppenderRef ref="console"/>
         </Root>
